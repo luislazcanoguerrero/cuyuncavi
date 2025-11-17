@@ -6,7 +6,7 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    let map = L.map('map');
+    let map = L.map('map', { fullscreenControl: true, fullscreenControlOptions: { position: 'topleft' } });
 
     // Estableciendo el centro y nivel de zoom
     map.setView([-33.39879895088932, -71.12705591086987], 18)
@@ -81,12 +81,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const boton = document.createElement('button')
         boton.className = 'btn btn-outline-success text-dark m-1 btn-sm'
         boton.innerHTML = `${name.toString().padStart(3, '0')}`
-        
+
         boton.addEventListener('click', (e) => {
             console.log(e)
             map.flyTo([latitud, longitud], 18)
         })
-        
+
         botonera.appendChild(boton)
     })
 
