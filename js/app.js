@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let map = L.map('map');
 
     // Estableciendo el centro y nivel de zoom
-    map.setView([-33.3926300400549,-71.12466035661018], 18)
-   
+    map.setView([-33.39879895088932, -71.12705591086987], 18)
+
 
     //2.- Añadir una cartografía base
     const baseMapa = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(`Se produjo el error ->  ${error}`)
         })
 
-
+    const botonera = document.querySelector("#botonera")
     rotulos.forEach(rotulo => {
         const { name, latitud, longitud } = rotulo
 
@@ -77,6 +77,17 @@ document.addEventListener('DOMContentLoaded', () => {
             .setLatLng([latitud, longitud]);
         text.addTo(map)
 
+
+        const boton = document.createElement('button')
+        boton.className = 'btn btn-outline-success text-dark m-1 btn-sm'
+        boton.innerHTML = `${name.toString().padStart(3, '0')}`
+        
+        boton.addEventListener('click', (e) => {
+            console.log(e)
+            map.flyTo([latitud, longitud], 18)
+        })
+        
+        botonera.appendChild(boton)
     })
 
 
@@ -167,6 +178,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
+
+    for (let i = 1; i <= 133; i++) {
+
+    }
 
 
 })
