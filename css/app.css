@@ -1,15 +1,21 @@
- #map { 
-   width: 97%; 
-   height: 1080px; 
-   box-shadow: 5px 5px 5px #888; 
- } 
+ #map {
+   width: 97%;
+   height: 800px;
+   box-shadow: 5px 5px 5px #888;
+ }
 
  .accordion-small .accordion-button {
-  padding: 0.5rem 0.75rem; /* Smaller padding for the button */
-  font-size: 0.5rem; /* Smaller font size for the button text */
-}
+   padding: 0.5rem 0.75rem;
+   /* Smaller padding for the button */
+   font-size: 0.5rem;
+   /* Smaller font size for the button text */
+ }
 
-.my-label {
-    position: absolute;
-    font-size:15px;
-}
+ .my-label {
+   color: #000;
+   font-weight: bold;
+   background: transparent;
+   border: 0;
+   box-shadow: none;
+   font-size: 1.2em;
+ }

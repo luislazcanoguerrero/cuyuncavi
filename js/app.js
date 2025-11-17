@@ -21,6 +21,17 @@ document.addEventListener('DOMContentLoaded', () => {
     baseMapa.addTo(map);
 
 
+    // 4. Añadiendo un visor con las coordenadas
+    // SE AGREGA UN DISPLAY DE LAS COORDENADAS
+    L.control.coordinates({
+        position: "bottomleft",
+        decimals: 6,
+        enableUserInput: false,
+        decimalSeperator: ",",
+        labelTemplateLat: "{y}",
+        labelTemplateLng: "{x}"
+    }).addTo(map);
+
     //add geojson layer
     const geoJsonUrl = 'data/territorios.json'
 
@@ -48,10 +59,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     rotulos.forEach(rotulo => {
-        const {name,latitud,longitud} = rotulo
-        var marker = new L.marker([latitud,longitud], { opacity:0.01}); //opacity may be set to zero
-        marker.bindTooltip(name, { permanent: true, className: "my-label", offset: [0, 0] });
-        marker.addTo(map);
+        const { name, latitud, longitud } = rotulo
+
+        L.circleMarker([latitud, longitud], {
+            radius: 20,
+            fillColor: '#fff000',
+            color: '#000000',
+            fillOpacity: 1
+        }).addTo(map);
+
+        var text = L.tooltip({
+            permanent: true,
+            direction: 'center',
+            className: 'my-label'
+        })
+            .setContent(name)
+            .setLatLng([latitud, longitud]);
+        text.addTo(map)
+
     })
 
 
@@ -59,7 +84,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //Encontrando el centro del poligono
         var polygon = L.polygon(feature.geometry.coordinates[0])
-        var latlon = polygon.getBounds().getCenter()
+        const { lat, lng } = polygon.getBounds().getCenter()
+        //  var marker = new L.marker([lng,lat], { opacity:1}); //opacity may be set to zero
+        //  marker.bindTooltip('xx', { permanent: false, className: "my-label", offset: [0, 0] });
+        //  marker.addTo(map);
+
+
+
+
         //console.log(`{"name":"${feature.properties.name}","latitud":"${latlon.lng}","longitud":"${latlon.lat}"},`)
 
 
