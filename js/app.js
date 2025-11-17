@@ -1,18 +1,13 @@
-//L.map es la clase central de la API. Se usa para crear y manipular el mapa. 
-// En el mapa establecemos unas coordeanas de la vista y un nivel de zoom.
-//1.- Crar el objeto mapa
-
-//import {rotulos} from "../data/rotulos.json"
-
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    //1. Crar el objeto mapa
     let map = L.map('map', { fullscreenControl: true, fullscreenControlOptions: { position: 'topleft' } });
 
-    // Estableciendo el centro y nivel de zoom
+    //2. Estableciendo el centro y nivel de zoom
     map.setView([-33.39879895088932, -71.12705591086987], 18)
 
-
-    //2.- Añadir una cartografía base
+    //3.- Añadir una cartografía base
     const baseMapa = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap<\/a> contributors',
         errorTileUrl: '0',
@@ -22,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // 4. Añadiendo un visor con las coordenadas
-    // SE AGREGA UN DISPLAY DE LAS COORDENADAS
     L.control.coordinates({
         position: "bottomleft",
         decimals: 6,
@@ -31,6 +25,22 @@ document.addEventListener('DOMContentLoaded', () => {
         labelTemplateLat: "{y}",
         labelTemplateLng: "{x}"
     }).addTo(map);
+
+
+    //5. Insertando una leyenda en el mapa
+    var legend = L.control({
+        position: 'topright'
+    });
+
+    legend.onAdd = function () {
+        var div = L.DomUtil.create('div', 'legend');
+        div.innerHTML += '<img alt="Descripcion de la imagen" src="/images/predi.png" width="80px"  >';
+        return div;
+    };
+    legend.addTo(map);
+
+
+
 
     //add geojson layer
     const geoJsonUrl = 'data/territorios.json'
@@ -92,80 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     function muestraFeatureDatos(feature, layer) {
-
         //Encontrando el centro del poligono
         var polygon = L.polygon(feature.geometry.coordinates[0])
         const { lat, lng } = polygon.getBounds().getCenter()
-        //  var marker = new L.marker([lng,lat], { opacity:1}); //opacity may be set to zero
-        //  marker.bindTooltip('xx', { permanent: false, className: "my-label", offset: [0, 0] });
-        //  marker.addTo(map);
-
-
-
-
-        //console.log(`{"name":"${feature.properties.name}","latitud":"${latlon.lng}","longitud":"${latlon.lat}"},`)
-
-
-        // const nuevoBoton = document.createElement('button')
-        // nuevoBoton.className = 'btn btn-light btn-sm m-1'      // Para agregar multiples clases
-        // nuevoBoton.textContent = Region                        // Establecer el título del boton
-        // grupoBotones.appendChild(nuevoBoton)                   // Agregar el elemento al pabre 
-        // nuevoBoton.id = codregion;
-
-        // const item = document.createElement('div')
-        // const titulo = document.createElement('h6')
-        // const boton = document.createElement('button')
-        // item.className = 'accordion-item'
-        // titulo.className = 'accordion-header'
-        // titulo.id = `headingOne${codregion}`
-
-        // boton.className = 'accordion-button text-dark'
-        // boton.setAttribute('type', 'button');
-        // boton.setAttribute('data-bs-toggle', 'collapse');
-        // boton.setAttribute('data-bs-target', `#collapse${codregion}`);
-        // boton.setAttribute('aria-expanded', true);
-        // boton.setAttribute('aria-controls', `collapse${codregion}`);
-        // boton.innerHTML = `<small class='text-danger'>  ${Region} </small>`
-        // titulo.appendChild(boton)
-        // item.appendChild(titulo)
-
-        // const cuerpo = document.createElement('div')
-        // cuerpo.id = `collapse${codregion}`
-        // cuerpo.className = 'accordion-collapse collapse'
-
-        // cuerpo.setAttribute('aria-labelledby', `heading${codregion}`)
-        // cuerpo.setAttribute('data-bs-parent', '#regionesMenu');
-
-        // const cuerpoDetalle = document.createElement('div')
-
-        // // Creando el slider para controlar la opacidad
-        // const slider = document.createElement('input')
-        // slider.className = 'form-range'
-        // slider.setAttribute('type', 'range')
-        // slider.setAttribute('min', 0)
-        // slider.setAttribute('max', 1)
-        // slider.setAttribute('step', 0.1)
-        // slider.setAttribute('value', 0)
-        // slider.setAttribute('regionId', `${codregion}`)
-        // slider.setAttribute('id', `slider${codregion}`)
-
-        // cuerpoDetalle.className = 'accordion-body'
-        // cuerpoDetalle.innerHTML = "<small> Opacity </small>"
-        // cuerpoDetalle.appendChild(slider)
-
-        // slider.addEventListener('change', (e) => {
-        //     const regionId = e.target.id
-        //     xx = document.getElementById(regionId)
-        //     //xx.setStyle({ fillOpacity: 1 });
-        //     console.log(xx.options)
-        // })
-
-
-        // cuerpo.appendChild(cuerpoDetalle)
-        // item.appendChild(cuerpo)
-        // regionesMenu.appendChild(item)
-
-        //console.log(document.getElementById("regionesMenu"))
 
         layer.on('click', function (e) {
             console.log(`"latitud":"${e.latlng.lat}","longitud":"${e.latlng.lng}"`)
@@ -175,12 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (feature.properties) {
             layer.bindPopup(`Territorio N°: ${feature.properties.name}`);
         }
-    }
-
-
-
-    for (let i = 1; i <= 133; i++) {
-
     }
 
 
