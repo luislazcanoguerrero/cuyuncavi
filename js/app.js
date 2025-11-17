@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let map = L.map('map', { fullscreenControl: true, fullscreenControlOptions: { position: 'topleft' } });
 
     //2. Estableciendo el centro y nivel de zoom
-    map.setView([-33.39879895088932, -71.12705591086987], 18)
+    map.setView([-33.393850938743675,-71.12627685070039], 18)
 
     //3.- Añadir una cartografía base
     const baseMapa = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     legend.onAdd = function () {
         var div = L.DomUtil.create('div', 'legend');
-        div.innerHTML += '<img alt="Descripcion de la imagen" src="/images/predi.png" width="80px"  >';
+        div.innerHTML += '<img alt="Descripcion de la imagen" src="/images/predi.png" width="80px" title="Estas buenas nuevas del Reino se predicarán en toda la tierra habitad">';
         return div;
     };
     legend.addTo(map);
@@ -107,7 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
         boton.innerHTML = `${name.toString().padStart(3, '0')}`
 
         boton.addEventListener('click', (e) => {
-            console.log(e)
             map.flyTo([latitud, longitud], 18)
         })
 
