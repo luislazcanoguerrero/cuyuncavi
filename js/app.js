@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let map = L.map('map');
 
     // Estableciendo el centro y nivel de zoom
-    map.setView([-33.40217085258906, -71.1293199930636], 18)
-
+    map.setView([-33.3926300400549,-71.12466035661018], 18)
+   
 
     //2.- Añadir una cartografía base
     const baseMapa = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const { name, latitud, longitud } = rotulo
 
         L.circleMarker([latitud, longitud], {
-            radius: 20,
+            radius: 18,
             fillColor: '#fff000',
             color: '#000000',
             fillOpacity: 1
@@ -157,9 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
         //console.log(document.getElementById("regionesMenu"))
 
         layer.on('click', function (e) {
-            var clickedMarker = e.target;
-            // var opaci = (e.target.options.fillOpacity > 1) ? 0 : e.target.options.fillOpacity + 0.2
-            // clickedMarker.setStyle({ fillOpacity: opaci });
+            console.log(`"latitud":"${e.latlng.lat}","longitud":"${e.latlng.lng}"`)
+            console.log(`${e.latlng.lat},${e.latlng.lng}`)
         })
 
         if (feature.properties) {
@@ -169,21 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-    map.on('click', (e) => {
-        console.log(`${e.latlng.lat},${e.latlng.lng}`)
-    })
 
 })
 
