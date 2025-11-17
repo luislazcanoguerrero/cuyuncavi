@@ -2,6 +2,7 @@
 // En el mapa establecemos unas coordeanas de la vista y un nivel de zoom.
 //1.- Crar el objeto mapa
 
+//import {rotulos} from "../data/rotulos.json"
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -46,6 +47,12 @@ document.addEventListener('DOMContentLoaded', () => {
         })
 
 
+    rotulos.forEach(rotulo => {
+        const {name,latitud,longitud} = rotulo
+        var marker = new L.marker([latitud,longitud], { opacity:0.01}); //opacity may be set to zero
+        marker.bindTooltip(name, { permanent: true, className: "my-label", offset: [0, 0] });
+        marker.addTo(map);
+    })
 
 
     function muestraFeatureDatos(feature, layer) {
@@ -53,12 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //Encontrando el centro del poligono
         var polygon = L.polygon(feature.geometry.coordinates[0])
         var latlon = polygon.getBounds().getCenter()
-//        console.log(`${latlon.lng},${latlon.lat},${feature.properties.name}`)
-
-        var marker = new L.marker([latlon.lng,latlon.lat], { opacity: 1 }); //opacity may be set to zero
-        marker.bindTooltip("1", { permanent: false, className: "my-label", offset: [0, 0] });
-        marker.addTo(map);
-
+        //console.log(`{"name":"${feature.properties.name}","latitud":"${latlon.lng}","longitud":"${latlon.lat}"},`)
 
 
         // const nuevoBoton = document.createElement('button')
