@@ -39,8 +39,22 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     legend.addTo(map);
 
-
-
+    // 6. Herramienta de medición de distancia 
+    var options = {
+        position: 'topleft',
+        lengthUnit: {
+            display: 'km',
+            label: 'Distancia: ',
+            decimal: 2,
+        },
+        angleUnit: {
+            display: '&deg;',
+            decimal: 2,
+            factor: null,
+            label: 'Rumbo: '
+        }
+    };
+    L.control.ruler(options).addTo(map);
 
     //add geojson layer
     const geoJsonUrl = 'data/territorios.json'
