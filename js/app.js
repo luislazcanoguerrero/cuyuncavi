@@ -5,16 +5,50 @@ document.addEventListener('DOMContentLoaded', () => {
     let map = L.map('map', { fullscreenControl: true, fullscreenControlOptions: { position: 'topleft' } });
 
     //2. Estableciendo el centro y nivel de zoom
-    map.setView([-33.393850938743675,-71.12627685070039], 18)
+    map.setView([-33.393850938743675, -71.12627685070039], 18)
 
     //3.- Añadir una cartografía base
-    const baseMapa = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+
+    const Topografica = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
+    });
+
+    const Satelital = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+        minZoom: 0,
+        maxZoom: 18
+    });
+
+    const OpenStreetMap = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap<\/a> contributors',
         errorTileUrl: '0',
         minZoom: 3
     });
-    baseMapa.addTo(map);
 
+
+    OpenStreetMap.addTo(map);
+
+    var baseMaps = {
+        "Satelital": Satelital,
+        "Topográfica": Topografica,
+        "Open Street Map": OpenStreetMap
+    };
+
+
+    const salon = L.marker([-33.40174220812829, -71.13112628459932]);
+    const lazcano = L.marker([-33.400117449531265, -71.1274838447571]);
+    const barrera = L.marker([-33.40544666167808, -71.14462852478029]);
+    const ampuero = L.marker([-33.39134725917198, -71.12310111522676]);
+    const mirta = L.marker([-33.39304027400479, -71.12457633018495]);
+
+    const puntos = L.layerGroup([salon, lazcano, barrera, ampuero, mirta]);
+
+
+    var overlayMaps = {
+        "P.Encuentro ": puntos
+    };
+
+    var layerControl = L.control.layers(baseMaps,overlayMaps,{ position: 'topleft' }).addTo(map);
 
     // 4. Añadiendo un visor con las coordenadas
     L.control.coordinates({
@@ -38,23 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return div;
     };
     legend.addTo(map);
-
-    // 6. Herramienta de medición de distancia 
-    var options = {
-        position: 'topleft',
-        lengthUnit: {
-            display: 'km',
-            label: 'Distancia: ',
-            decimal: 2,
-        },
-        angleUnit: {
-            display: '&deg;',
-            decimal: 2,
-            factor: null,
-            label: 'Rumbo: '
-        }
-    };
-    L.control.ruler(options).addTo(map);
 
     //add geojson layer
     const geoJsonUrl = 'data/territorios.json'
