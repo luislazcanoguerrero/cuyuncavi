@@ -85,8 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 style: function (feature) {
                     const { codregion, fillColor } = feature.properties
                     return {
-                        opacity: 0.8,   // controla la opacidad del borde 
-                        stroke: false,   // true = Con Borders remarcados
+                        opacity: 0.5,   // controla la opacidad del borde 
+                        stroke: true,   // true = Con Borders remarcados
+                        color: "#000",
                         fillColor: fillColor, // Establece el color de relleno del feature
                         fillOpacity: 0.4 // controla el nivel de opacidad ( 0 a 1) del relleno del feature
                     };
@@ -118,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
             .setLatLng([latitud, longitud]);
         text.addTo(map)
 
-
         const boton = document.createElement('button')
         boton.className = 'btn btn-outline-success text-dark m-1 btn-sm'
         boton.innerHTML = `${name.toString().padStart(3, '0')}`
@@ -126,7 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
         boton.addEventListener('click', (e) => {
             map.flyTo([latitud, longitud], 18)
         })
-
         botonera.appendChild(boton)
     })
 
