@@ -59,7 +59,6 @@ const rotulos = [{ "name": "1", "latitud": "-33.40577146994817", "longitud": "-7
 { "name": "23B", "latitud": "-33.3975985", "longitud": "-71.12532200000001" },
 { "name": "24A", "latitud": "-33.39598015733717", "longitud": "-71.13225295911296" },
 { "name": "24B", "latitud": "-33.396696000000006", "longitud": "-71.1313625" },
-
 { "name": "25A", "latitud": "-33.396091999999996", "longitud": "-71.131" },
 { "name": "25B", "latitud": "-33.3960985", "longitud": "-71.1306305" },
 { "name": "26A", "latitud": "-33.396112", "longitud": "-71.130268" },
@@ -73,7 +72,6 @@ const rotulos = [{ "name": "1", "latitud": "-33.40577146994817", "longitud": "-7
 { "name": "29B", "latitud": "-33.395319", "longitud": "-71.127763" },
 { "name": "30A", "latitud": "-33.39587", "longitud": "-71.12650500000001" },
 { "name": "30B", "latitud": "-33.3958945", "longitud": "-71.12489049999999" },
-
 { "name": "30C", "latitud": "-33.396954", "longitud": "-71.1243775" },
 { "name": "31A", "latitud": "-33.396954", "longitud": "-71.12342431849186" },
 { "name": "31B", "latitud": "-33.3966805", "longitud": "-71.122441" },
@@ -135,6 +133,4 @@ const rotulos = [{ "name": "1", "latitud": "-33.40577146994817", "longitud": "-7
 { "name": "55A", "latitud":"-33.39337800524391","longitud":"-71.12074771404464"},
 { "name": "55B", "latitud":"-33.39337800524391","longitud":"-71.1202350" },
 { "name": "55C", "latitud": "-33.39337800524391", "longitud": "-71.1198500" },
-
-
 ]

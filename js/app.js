@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     //1. Crar el objeto mapa
     let map = L.map('map', { fullscreenControl: true, fullscreenControlOptions: { position: 'topleft' } });
 
+
+
+
+
     //2. Estableciendo el centro y nivel de zoom
     map.setView([-33.393850938743675, -71.12627685070039], 18)
 
@@ -34,12 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
         "Open Street Map": OpenStreetMap
     };
 
+   
 
     const salon = L.marker([-33.40174220812829, -71.13112628459932]);
     const lazcano = L.marker([-33.400117449531265, -71.1274838447571]);
     const barrera = L.marker([-33.40544666167808, -71.14462852478029]);
     const ampuero = L.marker([-33.39134725917198, -71.12310111522676]);
     const mirta = L.marker([-33.39304027400479, -71.12457633018495]);
+
 
     const puntos = L.layerGroup([salon, lazcano, barrera, ampuero, mirta]);
 
@@ -49,6 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     var layerControl = L.control.layers(baseMaps,overlayMaps,{ position: 'topleft' }).addTo(map);
+
+
 
     // 4. Añadiendo un visor con las coordenadas
     L.control.coordinates({
@@ -114,13 +122,13 @@ document.addEventListener('DOMContentLoaded', () => {
         botonera.appendChild(boton)
     })
 
-
+    // Rotulos de los territorios
     rotulos.forEach(rotulo => {
         const { name, latitud, longitud } = rotulo
 
         L.circleMarker([latitud, longitud], {
-            radius: 18,
-            fillColor: '#fff000',
+            radius: 20,
+            fillColor: '#ffff00',
             color: '#000000',
             fillOpacity: 1
         }).addTo(map);
