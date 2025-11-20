@@ -112,7 +112,7 @@
         "id": 1550,
         "name": "2",
         "position": { "latitud": "-33.404602658294024", "longitud": "-71.13757332674801" },
-        "fillColor": "#009900",
+        "fillColor": "#20accf",
         "shape": "Polygon"
       },
       "geometry": {
@@ -411,7 +411,7 @@
       "type": "Feature",
       "properties": {
         "id": 945,
-        "name": "3",
+        "name": "2",
         "position": {"latitud": "-33.4026635605985", "longitud": "-71.13215652580948" },
         "fillColor": "#ff0000",
         "shape": "Polygon"
@@ -471,60 +471,14 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 2873,
-        "name": "4",
-        "position": {"latitud": "-33.401705500000006", "longitud": "-71.12778449999999" },
-        "color": "text-red-800",
-        "fillColor": "#117A65",
-        "shape": "Polygon"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -71.128766,
-              -33.400868
-            ],
-            [
-              -71.126819,
-              -33.400886
-            ],
-            [
-              -71.126792,
-              -33.40094
-            ],
-            [
-              -71.126878,
-              -33.402368
-            ],
-            [
-              -71.128766,
-              -33.402543
-            ],
-            [
-              -71.128777,
-              -33.40111
-            ],
-            [
-              -71.128766,
-              -33.400868
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": 2924,
-        "name": "5",
+        "name": "3A",
         "position": {
           "latitud": "-33.401343",
           "longitud": "-71.1340445"
         },
         "color": "text-red-800",
-        "fillColor": "#1F618D",
+        "fillColor": "#117A65",
         "shape": "Polygon"
       },
       "geometry": {
@@ -558,14 +512,55 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 2943,
+        "name": "3B",
+        "position": {
+          "latitud": "-33.401061",
+          "longitud": "-71.1335565"
+        },
+        "color": "text-red-800",
+        "fillColor": "#117A65",
+        "shape": "Polygon"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.13376,
+              -33.400747
+            ],
+            [
+              -71.133755,
+              -33.401374
+            ],
+            [
+              -71.133358,
+              -33.401379
+            ],
+            [
+              -71.133353,
+              -33.400743
+            ],
+            [
+              -71.13376,
+              -33.400747
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 3004,
-        "name": "6",
+        "name": "3C",
         "position": {
           "latitud": "-33.401692",
           "longitud": "-71.1335565"
         },
         "color": "text-red-800",
-        "fillColor": "#515A5A",
+        "fillColor": "#117A65",
         "shape": "Polygon"
       },
       "geometry": {
@@ -600,13 +595,13 @@
       "type": "Feature",
       "properties": {
         "id": 2981,
-        "name": "7",
+        "name": "3D",
         "position": {
           "latitud": "-33.4013765",
           "longitud": "-71.1316145"
         },
         "color": "text-red-800",
-        "fillColor": "#03fcb6",
+        "fillColor": "#117A65",
         "shape": "Polygon"
       },
       "geometry": {
@@ -640,94 +635,8 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 2386,
-        "name": "8",
-        "position": {
-          "latitud": "-33.4013205",
-          "longitud": "-71.129367"
-        },
-        "color": "text-red-800",
-        "fillColor": "#ffff00",
-        "shape": "Polygon"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -71.12985,
-              -33.400846
-            ],
-            [
-              -71.128825,
-              -33.400868
-            ],
-            [
-              -71.128841,
-              -33.401791
-            ],
-            [
-              -71.129909,
-              -33.401795
-            ],
-            [
-              -71.129882,
-              -33.401092
-            ],
-            [
-              -71.12985,
-              -33.400846
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 2943,
-        "name": "9",
-        "position": {
-          "latitud": "-33.401061",
-          "longitud": "-71.1335565"
-        },
-        "color": "text-red-800",
-        "fillColor": "#ff0000",
-        "shape": "Polygon"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -71.13376,
-              -33.400747
-            ],
-            [
-              -71.133755,
-              -33.401374
-            ],
-            [
-              -71.133358,
-              -33.401379
-            ],
-            [
-              -71.133353,
-              -33.400743
-            ],
-            [
-              -71.13376,
-              -33.400747
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": 567,
-        "name": "10",
+        "name": "4",
         "position": {
           "latitud": "-33.400118359219846",
           "longitud": "-71.1317423674787"
@@ -870,208 +779,8 @@
     {
       "type": "Feature",
       "properties": {
-        "id": 485,
-        "name": "11",
-        "position": {
-          "latitud": "-33.4001605",
-          "longitud": "-71.130217"
-        },
-        "fillColor": "#ff0000",
-        "shape": "Polygon"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -71.13052,
-              -33.399569
-            ],
-            [
-              -71.129844,
-              -33.399587
-            ],
-            [
-              -71.129903,
-              -33.400752
-            ],
-            [
-              -71.13059,
-              -33.400747
-            ],
-            [
-              -71.13052,
-              -33.399569
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 1139,
-        "name": "12",
-        "position": {
-          "latitud": "-33.400185",
-          "longitud": "-71.12930750000001"
-        },
-        "fillColor": "#20accf",
-        "shape": "Polygon"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -71.129774,
-              -33.399592
-            ],
-            [
-              -71.128771,
-              -33.399627
-            ],
-            [
-              -71.128814,
-              -33.400778
-            ],
-            [
-              -71.129844,
-              -33.400756
-            ],
-            [
-              -71.129785,
-              -33.399919
-            ],
-            [
-              -71.129774,
-              -33.399592
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 1049,
-        "name": "14",
-        "position": {
-          "latitud": "-33.3998535",
-          "longitud": "-71.1270095"
-        },
-        "fillColor": "#03fcb6",
-        "shape": "Polygon"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -71.127264,
-              -33.399654
-            ],
-            [
-              -71.126749,
-              -33.399654
-            ],
-            [
-              -71.126744,
-              -33.400053
-            ],
-            [
-              -71.127275,
-              -33.400048
-            ],
-            [
-              -71.127264,
-              -33.399654
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 1068,
-        "name": "14",
-        "position": {
-          "latitud": "-33.3998535",
-          "longitud": "-71.1270095"
-        },
-        "fillColor": "#03fcb6",
-        "shape": "Polygon"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -71.127285,
-              -33.400469
-            ],
-            [
-              -71.12676,
-              -33.400474
-            ],
-            [
-              -71.12677,
-              -33.400796
-            ],
-            [
-              -71.12728,
-              -33.400796
-            ],
-            [
-              -71.127285,
-              -33.400469
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 1097,
-        "name": "15",
-        "position": {
-          "latitud": "-33.3998535",
-          "longitud": "-71.12651120175964"
-        },
-        "fillColor": "#ff0000",
-        "shape": "Polygon"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -71.12669,
-              -33.399654
-            ],
-            [
-              -71.126164,
-              -33.399663
-            ],
-            [
-              -71.126706,
-              -33.400671
-            ],
-            [
-              -71.12669,
-              -33.399654
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": 266,
-        "name": "16",
+        "name": "5A",
         "position": {
           "latitud": "-33.398886",
           "longitud": "-71.13015"
@@ -1111,12 +820,12 @@
       "type": "Feature",
       "properties": {
         "id": 1082,
-        "name": "17",
+        "name": "5B",
         "position": {
           "latitud": "-33.398886",
           "longitud": "-71.12926999999999"
         },
-        "fillColor": "#752174",
+        "fillColor": "#b66d00",
         "shape": "Polygon"
       },
       "geometry": {
@@ -1150,8 +859,92 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 485,
+        "name": "5C",
+        "position": {
+          "latitud": "-33.4001605",
+          "longitud": "-71.130217"
+        },
+        "fillColor": "#b66d00",
+        "shape": "Polygon"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.13052,
+              -33.399569
+            ],
+            [
+              -71.129844,
+              -33.399587
+            ],
+            [
+              -71.129903,
+              -33.400752
+            ],
+            [
+              -71.13059,
+              -33.400747
+            ],
+            [
+              -71.13052,
+              -33.399569
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1139,
+        "name": "5D",
+        "position": {
+          "latitud": "-33.400185",
+          "longitud": "-71.12930750000001"
+        },
+        "fillColor": "#b66d00",
+        "shape": "Polygon"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.129774,
+              -33.399592
+            ],
+            [
+              -71.128771,
+              -33.399627
+            ],
+            [
+              -71.128814,
+              -33.400778
+            ],
+            [
+              -71.129844,
+              -33.400756
+            ],
+            [
+              -71.129785,
+              -33.399919
+            ],
+            [
+              -71.129774,
+              -33.399592
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": 1140,
-        "name": "18",
+        "name": "6A",
         "position": {
           "latitud": "-33.398886",
           "longitud": "-71.12801250000001"
@@ -1195,12 +988,12 @@
       "type": "Feature",
       "properties": {
         "id": 1003,
-        "name": "19",
+        "name": "6B",
         "position": {
           "latitud": "-33.398886",
           "longitud": "-71.1265775"
         },
-        "fillColor": "#009900",
+        "fillColor": "#ff0000",
         "shape": "Polygon"
       },
       "geometry": {
@@ -1239,12 +1032,12 @@
       "type": "Feature",
       "properties": {
         "id": 1175,
-        "name": "20",
+        "name": "6C",
         "position": {
           "latitud": "-33.39842069671585",
           "longitud": "-71.12569556513598"
         },
-        "fillColor": "#b66d00",
+        "fillColor": "#ff0000",
         "shape": "Polygon"
       },
       "geometry": {
@@ -1274,8 +1067,261 @@
     {
       "type": "Feature",
       "properties": {
+        "id": 1020,
+        "name": "7A",
+        "position": {
+          "latitud": "-33.400205",
+          "longitud": "-71.128039"
+        },
+        "fillColor": "#ffff00",
+        "shape": "Polygon"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.128718,
+              -33.399627
+            ],
+            [
+              -71.12875,
+              -33.400778
+            ],
+            [
+              -71.12735,
+              -33.400783
+            ],
+            [
+              -71.127328,
+              -33.399645
+            ],
+            [
+              -71.128718,
+              -33.399627
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1049,
+        "name": "7B",
+        "position": {
+          "latitud": "-33.3998535",
+          "longitud": "-71.1270095"
+        },
+        "fillColor": "#ffff00",
+        "shape": "Polygon"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.127264,
+              -33.399654
+            ],
+            [
+              -71.126749,
+              -33.399654
+            ],
+            [
+              -71.126744,
+              -33.400053
+            ],
+            [
+              -71.127275,
+              -33.400048
+            ],
+            [
+              -71.127264,
+              -33.399654
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1068,
+        "name": "7B",
+        "position": {
+          "latitud": "-33.3998535",
+          "longitud": "-71.1270095"
+        },
+        "fillColor": "#ffff00",
+        "shape": "Polygon"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.127285,
+              -33.400469
+            ],
+            [
+              -71.12676,
+              -33.400474
+            ],
+            [
+              -71.12677,
+              -33.400796
+            ],
+            [
+              -71.12728,
+              -33.400796
+            ],
+            [
+              -71.127285,
+              -33.400469
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1097,
+        "name": "7C",
+        "position": {
+          "latitud": "-33.3998535",
+          "longitud": "-71.12651120175964"
+        },
+        "fillColor": "#ffff00",
+        "shape": "Polygon"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.12669,
+              -33.399654
+            ],
+            [
+              -71.126164,
+              -33.399663
+            ],
+            [
+              -71.126706,
+              -33.400671
+            ],
+            [
+              -71.12669,
+              -33.399654
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2386,
+        "name": "8A",
+        "position": {
+          "latitud": "-33.4013205",
+          "longitud": "-71.129367"
+        },
+        "color": "text-red-800",
+        "fillColor": "#009900",
+        "shape": "Polygon"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.12985,
+              -33.400846
+            ],
+            [
+              -71.128825,
+              -33.400868
+            ],
+            [
+              -71.128841,
+              -33.401791
+            ],
+            [
+              -71.129909,
+              -33.401795
+            ],
+            [
+              -71.129882,
+              -33.401092
+            ],
+            [
+              -71.12985,
+              -33.400846
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2873,
+        "name": "8B",
+        "position": {"latitud": "-33.401705500000006", "longitud": "-71.12778449999999" },
+        "color": "text-red-800",
+        "fillColor": "#009900",
+        "shape": "Polygon"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -71.128766,
+              -33.400868
+            ],
+            [
+              -71.126819,
+              -33.400886
+            ],
+            [
+              -71.126792,
+              -33.40094
+            ],
+            [
+              -71.126878,
+              -33.402368
+            ],
+            [
+              -71.128766,
+              -33.402543
+            ],
+            [
+              -71.128777,
+              -33.40111
+            ],
+            [
+              -71.128766,
+              -33.400868
+            ]
+          ]
+        ]
+      }
+    },
+    
+
+
+
+
+
+    {
+      "type": "Feature",
+      "properties": {
         "id": 4534,
-        "name": "21",
+        "name": "19A",
         "position": {
           "latitud": "-33.3975985",
           "longitud": "-71.1316765"
@@ -1315,12 +1361,12 @@
       "type": "Feature",
       "properties": {
         "id": 4553,
-        "name": "22",
+        "name": "19B",
         "position": {
           "latitud": "-33.3975985",
           "longitud": "-71.13132999999999"
         },
-        "fillColor": "#ff0000",
+        "fillColor": "#20accf",
         "shape": "Polygon"
       },
       "geometry": {
@@ -1355,7 +1401,7 @@
       "type": "Feature",
       "properties": {
         "id": 4572,
-        "name": "23",
+        "name": "20A",
         "position": {
           "latitud": "-33.3975985",
           "longitud": "-71.1310135"
@@ -1395,12 +1441,12 @@
       "type": "Feature",
       "properties": {
         "id": 4591,
-        "name": "24",
+        "name": "20B",
         "position": {
           "latitud": "-33.3975985",
           "longitud": "-71.13065449999999"
         },
-        "fillColor": "#b66d00",
+        "fillColor": "#1752e8",
         "shape": "Polygon"
       },
       "geometry": {
@@ -1431,11 +1477,12 @@
         ]
       }
     },
+
     {
       "type": "Feature",
       "properties": {
         "id": 4610,
-        "name": "25",
+        "name": "21A",
         "position": {
           "latitud": "-33.3975985",
           "longitud": "-71.1302815"
@@ -1475,12 +1522,12 @@
       "type": "Feature",
       "properties": {
         "id": 4629,
-        "name": "26",
+        "name": "21B",
         "position": {
           "latitud": "-33.3975985",
           "longitud": "-71.129922"
         },
-        "fillColor": "#009900",
+        "fillColor": "#ffff00",
         "shape": "Polygon"
       },
       "geometry": {
@@ -1511,11 +1558,12 @@
         ]
       }
     },
+
     {
       "type": "Feature",
       "properties": {
         "id": 4484,
-        "name": "27",
+        "name": "22A",
         "position": {
           "latitud": "-33.3975985",
           "longitud": "-71.129219"
@@ -1551,16 +1599,17 @@
         ]
       }
     },
+
     {
       "type": "Feature",
       "properties": {
         "id": 4505,
-        "name": "28",
+        "name": "22B",
         "position": {
           "latitud": "-33.3975985",
           "longitud": "-71.127996"
         },
-        "fillColor": "#9bcc38",
+        "fillColor": "#20accf",
         "shape": "Polygon"
       },
       "geometry": {
@@ -1591,16 +1640,17 @@
         ]
       }
     },
+
     {
       "type": "Feature",
       "properties": {
         "id": 4380,
-        "name": "29",
+        "name": "23A",
         "position": {
           "latitud": "-33.3975985",
           "longitud": "-71.126545"
         },
-        "fillColor": "#c70518",
+        "fillColor": "#752174",
         "shape": "Polygon"
       },
       "geometry": {
@@ -1635,7 +1685,7 @@
       "type": "Feature",
       "properties": {
         "id": 4455,
-        "name": "30",
+        "name": "23B",
         "position": {
           "latitud": "-33.3975985",
           "longitud": "-71.12532200000001"
@@ -1679,11 +1729,12 @@
         ]
       }
     },
+
     {
       "type": "Feature",
       "properties": {
         "id": 28060,
-        "name": "31",
+        "name": "24A",
         "position": {
           "latitud": "-33.39598015733717",
           "longitud": "-71.13225295911296"
@@ -1987,12 +2038,12 @@
       "type": "Feature",
       "properties": {
         "id": 2547,
-        "name": "32",
+        "name": "24B",
         "position": {
           "latitud": "-33.396696000000006",
           "longitud": "-71.1313625"
         },
-        "fillColor": "#b66d00",
+        "fillColor": "#009900",
         "shape": "Polygon"
       },
       "geometry": {
@@ -2023,11 +2074,12 @@
         ]
       }
     },
+
     {
       "type": "Feature",
       "properties": {
         "id": 312,
-        "name": "33",
+        "name": "25A",
         "position": {
           "latitud": "-33.3964945",
           "longitud": "-71.1290395"
@@ -2071,12 +2123,12 @@
       "type": "Feature",
       "properties": {
         "id": 334,
-        "name": "34",
+        "name": "25B",
         "position": {
           "latitud": "-33.396508",
           "longitud": "-71.127811"
         },
-        "fillColor": "#ffff00",
+        "fillColor": "#03fcb6",
         "shape": "Polygon"
       },
       "geometry": {
@@ -2107,6 +2159,7 @@
         ]
       }
     },
+    
     {
       "type": "Feature",
       "properties": {
@@ -5016,46 +5069,6 @@
             [
               -71.127731,
               -33.404298
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": 1020,
-        "name": "13",
-        "position": {
-          "latitud": "-33.400205",
-          "longitud": "-71.128039"
-        },
-        "fillColor": "#ffff00",
-        "shape": "Polygon"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -71.128718,
-              -33.399627
-            ],
-            [
-              -71.12875,
-              -33.400778
-            ],
-            [
-              -71.12735,
-              -33.400783
-            ],
-            [
-              -71.127328,
-              -33.399645
-            ],
-            [
-              -71.128718,
-              -33.399627
             ]
           ]
         ]
