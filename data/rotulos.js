@@ -12,7 +12,7 @@ const rotulos = [{ "name": "1", "latitud": "-33.40577146994817", "longitud": "-7
 { "name": "4B", "latitud": "-33.4080065", "longitud": "-71.127857" },
 { "name": "4C", "latitud": "-33.4079995", "longitud": "-71.127492" },
 { "name": "4D", "latitud": "-33.407986", "longitud": "-71.1269045" },
-{ "name": "5A","latitud":"-33.406620849729514","longitud":"-71.1276836201136"},
+{ "name": "5A", "latitud":"-33.406677246181836","longitud":"-71.12766615115108"},
 { "name": "5B", "latitud": "-33.406746", "longitud": "-71.1270415" },
 { "name": "5C", "latitud": "-33.406741499999995", "longitud": "-71.1266925" },
 { "name": "6A", "latitud": "-33.405671", "longitud": "-71.127634" },

@@ -100,6 +100,21 @@ document.addEventListener('DOMContentLoaded', () => {
         })
 
     const botonera = document.querySelector("#botonera")
+    
+    // Botonera de acceso direct
+    botones.forEach(rotulo => {
+        const { name, latitud, longitud } = rotulo
+        const boton = document.createElement('button')
+        boton.className = 'btn btn-outline-success text-dark m-1 p-1 btn-sm'
+        boton.innerHTML = `${name.toString().padStart(3, '0')}`
+
+        boton.addEventListener('click', (e) => {
+            map.flyTo([latitud, longitud], 18)
+        })
+        botonera.appendChild(boton)
+    })
+
+
     rotulos.forEach(rotulo => {
         const { name, latitud, longitud } = rotulo
 
@@ -118,15 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
             .setContent(name)
             .setLatLng([latitud, longitud]);
         text.addTo(map)
-
-        const boton = document.createElement('button')
-        boton.className = 'btn btn-outline-success text-dark m-1 btn-sm'
-        boton.innerHTML = `${name.toString().padStart(3, '0')}`
-
-        boton.addEventListener('click', (e) => {
-            map.flyTo([latitud, longitud], 18)
-        })
-        botonera.appendChild(boton)
     })
 
 
