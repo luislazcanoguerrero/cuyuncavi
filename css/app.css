@@ -11,7 +11,17 @@
    /* Smaller font size for the button text */
  }
 
- .my-label {
+.label-villas {
+   color: #fff;
+   font-weight: bold;
+   background-color: #000;
+   border: 0px;
+   border-radius: 10px;
+   box-shadow: 1px;
+   font-size: 1.2em;
+}
+
+.my-label {
    color: #000;
    font-weight: bold;
    background: transparent;
