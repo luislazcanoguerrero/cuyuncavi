@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let map = L.map('map', { fullscreenControl: true, fullscreenControlOptions: { position: 'topleft' } });
 
     // CREA OBJETO LAYER CONTROL PARA CONTROLAR LA CAPAS
-    const layerControl = L.control.layers(null,null,{ position: 'topleft',collapsed:false});
+    const layerControl = L.control.layers(null, null, { position: 'topleft', collapsed: true });
+
 
     //3.- Añadir una cartografía base
     const Topografica = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
@@ -41,10 +42,49 @@ document.addEventListener('DOMContentLoaded', () => {
     // MARCARDO INICIALMENTE UN CENTRO DEL MAPA
     map.setView([-33.393850938743675, -71.12627685070039], 18)
 
+    //CREANDO MARCADORES PARA LAS VILLAS
+    var villasIcon = L.icon({
+        iconUrl: '../images/svg/house-home-svgrepo-com.svg',
+        iconSize: [40, 40], // size of the icon
+        iconAnchor: [25, 50], // point of the icon which will correspond to marker's location
+        popupAnchor: [0, -40] // point from which the popup should open relative to the iconAnchor
+    });
+
+    const aires = L.marker([-33.40863864443387, -71.1273229122162],{icon: villasIcon})
+    const patriotas = L.marker([-33.39184441774129, -71.1224788427353],{icon: villasIcon})
+    const cementerio = L.marker([-33.40225228747265, -71.12020701169969],{icon: villasIcon})
+    const racimos = L.marker([-33.40382417650575,-71.1269634962082],{icon: villasIcon})
+    const padre = L.marker([-33.40678472120551,-71.12734973430635],{icon: villasIcon})
+    const valle = L.marker([ -33.39761034661416, -71.1307454109192],{icon: villasIcon})
+    const williams = L.marker([-33.39077395567001,-71.12598180770875],{icon: villasIcon})
+    const german = L.marker([-33.39555825065173, -71.13075613975526],{icon: villasIcon})
+    const alberto = L.marker([-33.40024193682605,-71.12517714500429],{icon: villasIcon})
+    const conquista = L.marker([-33.39355176906471,-71.120263338089],{icon: villasIcon})
+    const bajo = L.marker([-33.3855719913699, -71.11980199813844],{icon: villasIcon})
+    const alto = L.marker([ -33.3879011526993,-71.11716270446779],{icon: villasIcon})
+    const sol = L.marker([  -33.39787279894641,-71.122784614563],{icon: villasIcon})
+    const carol = L.marker([-33.39237292553458, -71.12376630306245],{icon: villasIcon})
+    
+    aires.bindTooltip("Aires de Curacavi",{permanent: true,direction: 'right', className: 'label-villas'})
+    patriotas.bindTooltip("Los Patriotas",{permanent: true,direction: 'right', className: 'label-villas'})
+    cementerio.bindTooltip("Cementerio",{permanent: true,direction: 'right', className: 'label-villas'})
+    racimos.bindTooltip("Los Racimos",{permanent: true,direction: 'right', className: 'label-villas'})
+    padre.bindTooltip("Padre Hurtado",{permanent: true,direction: 'right', className: 'label-villas'})
+    valle.bindTooltip("Valle de los Sueños",{permanent: true,direction: 'right', className: 'label-villas'})
+    williams.bindTooltip("Williams Rebolledo",{permanent: true,direction: 'right', className: 'label-villas'})
+    german.bindTooltip("Germán Riesco",{permanent: true,direction: 'right', className: 'label-villas'})
+    alberto.bindTooltip("San Alberto",{permanent: true,direction: 'right', className: 'label-villas'})
+    conquista.bindTooltip("Los Conquistadores",{permanent: true,direction: 'right', className: 'label-villas'})
+    bajo.bindTooltip("Cuyuncaví Bajo",{permanent: true,direction: 'right', className: 'label-villas'})
+    alto.bindTooltip("Cuyuncaví Alto",{permanent: true,direction: 'right', className: 'label-villas'})
+    sol.bindTooltip("Villa el Sol",{permanent: true,direction: 'right', className: 'label-villas'})
+    carol.bindTooltip("Carol Urzúa",{permanent: true,direction: 'right', className: 'label-villas'})
+    const villas = L.layerGroup([aires, patriotas, cementerio,racimos,padre,valle,williams,german,alberto,conquista,bajo,alto,sol,carol]);
+
 
     // CREANDO MARCADORES PARA LUGARES DE REUNIÓN
     const salon = L.marker([-33.40174220812829, -71.13112628459932]);
-    const lazcano = L.marker([-33.398629676103276,-71.12742483615877]);
+    const lazcano = L.marker([-33.398629676103276, -71.12742483615877]);
     const barrera = L.marker([-33.40544666167808, -71.14462852478029]);
     const ampuero = L.marker([-33.39134725917198, -71.12310111522676]);
     const mirta = L.marker([-33.39304027400479, -71.12457633018495]);
@@ -52,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // AGRUPARLOS EN UN LAYERGROUP
     const puntos = L.layerGroup([salon, lazcano, barrera, ampuero, mirta]);
 
-        
+
 
     // Insertando una imagen en el mapa en la esquina superior derecha
     var legend = L.control({
@@ -139,21 +179,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // AGREGANDO UN LAYER CONTROL PARA LOS DIFERENTES LAYES DEL MAPA
     layerControl.addBaseLayer(Satelital, "Satelital");
-    layerControl.addBaseLayer(Topografica, "Satelital");
+    layerControl.addBaseLayer(Topografica, "Topografica");
     layerControl.addBaseLayer(OpenStreetMap, "Open Street Map");
     layerControl.addOverlay(puntos, "P. Encuentro")
     layerControl.addOverlay(numeros, 'Número Territorios');
+    layerControl.addOverlay(villas, 'Villas');
     layerControl.addTo(map)
-    
-    
+
+    map.on('click', (e) => {
+        console.log(e.latlng)
+    })
+
     // Oculta o Muestra capa dependiendo del nivel de zoom
     map.on('zoomend', function (e) {
-        if (map.getZoom() < 16){
-            map.removeLayer(numeros);
-        }else if (map.getZoom() >= 16){
-            map.addLayer(numeros);
+        const clase = document.getElementsByClassName('my-label')
+        const zoomLevel = map.getZoom();
+
+        let zoomFontSize = '0.3rem'
+        if (zoomLevel >= 15) {
+            console.log(zoomLevel)
+            switch (zoomLevel) {
+                case 15:
+                    zoomFontSize = '0.6rem'
+                    break;
+                case 16:
+                    zoomFontSize = '0.8rem'
+                    break;
+                case 17:
+                    zoomFontSize = '1.2rem'
+                    break;
+                case 18:
+                    zoomFontSize = '1.4rem'
+                    break;
+                case 19:
+                    zoomFontSize = '2.2rem'
+                    break;
+                default:
+                    zoomFontSize = '2.2rem'
+                    break;
+            }
         }
+        for (i = 0; i < clase.length; i++) {
+            clase[i].style.fontSize = zoomFontSize;
+        }
+
     })
+
 
 
 })
