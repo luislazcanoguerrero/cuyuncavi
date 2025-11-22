@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
         maxZoom: 18
     });
 
-    const OpenStreetMap = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap<\/a> contributors',
+    const OpenStreetMap = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap<\/a> contributors',
         errorTileUrl: '0',
         minZoom: 3,
         maxZoom: 19
@@ -206,10 +206,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     zoomFontSize = '0.8rem'
                     break;
                 case 17:
-                    zoomFontSize = '1.2rem'
+                    zoomFontSize = '0.8rem'
                     break;
                 case 18:
-                    zoomFontSize = '1.4rem'
+                    zoomFontSize = '1.1rem'
                     break;
                 case 19:
                     zoomFontSize = '2.2rem'
