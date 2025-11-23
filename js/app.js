@@ -26,21 +26,22 @@ document.addEventListener('DOMContentLoaded', () => {
         minZoom: 3,
         maxZoom: 19
     });
+
     OpenStreetMap.addTo(map);
 
+
+
+    // MARCARDO INICIALMENTE UN CENTRO DEL MAPA
+    map.setView([-33.393850938743675, -71.12627685070039], 18)
+
+
     // AÑADIENDO UN RECUEDRO PARA LAS COORDENADAS
-    L.control.coordinates({
-        position: "bottomleft",
-        decimals: 6,
-        enableUserInput: false,
+    L.control.coordinates({position: "bottomleft",decimals: 6,enableUserInput: false,
         decimalSeperator: ",",
         labelTemplateLat: "{y}",
         labelTemplateLng: "{x}"
     }).addTo(map);
 
-
-    // MARCARDO INICIALMENTE UN CENTRO DEL MAPA
-    map.setView([-33.393850938743675, -71.12627685070039], 18)
 
     //CREANDO MARCADORES PARA LAS VILLAS
     var villasIcon = L.icon({
@@ -87,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //CREANDO MARCADORES PARA LAS VILLAS
     var puntosIcon = L.icon({
-        iconUrl: '../images/svg/banderin.png',
+        iconUrl: '../images/ubicaciones.png',
         iconSize: [50, 50], // size of the icon
         iconAnchor: [25, 50], // point of the icon which will correspond to marker's location
         popupAnchor: [0, -40] // point from which the popup should open relative to the iconAnchor
@@ -116,8 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
     legend.addTo(map);
 
     //add geojson layer
-    // aqui cargo el geojson pero no parece ocurrir nada
-    // Vario la opacidad por cada feature
     const geoJsonUrl = 'data/territorios.json'
     fetch(geoJsonUrl)
         .then(response => response.json())
@@ -143,9 +142,9 @@ document.addEventListener('DOMContentLoaded', () => {
         })
 
 
-    const botonera = document.querySelector("#botonera")
-
+        
     // Botonera de acceso direct
+    const botonera = document.querySelector("#botonera")
     botones.forEach(rotulo => {
         const { name, latitud, longitud } = rotulo
         const boton = document.createElement('button')
