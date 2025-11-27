@@ -32,11 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // MARCARDO INICIALMENTE UN CENTRO DEL MAPA
-    map.setView([-33.393850938743675, -71.12627685070039], 18)
+    map.setView([-33.4013205,-71.129367], 18)
 
 
     // AÑADIENDO UN RECUEDRO PARA LAS COORDENADAS
-    L.control.coordinates({position: "bottomleft",decimals: 6,enableUserInput: false,
+    L.control.coordinates({
+        position: "bottomleft", decimals: 6, enableUserInput: false,
         decimalSeperator: ",",
         labelTemplateLat: "{y}",
         labelTemplateLng: "{x}"
@@ -142,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
 
 
-        
+
     // Botonera de acceso direct
     const botonera = document.querySelector("#botonera")
     botones.forEach(rotulo => {
@@ -175,10 +176,19 @@ document.addEventListener('DOMContentLoaded', () => {
         var polygon = L.polygon(feature.geometry.coordinates[0])
         const { lat, lng } = polygon.getBounds().getCenter()
 
-        layer.on('click', function (e) {
-            console.log(`"latitud":"${e.latlng.lat}","longitud":"${e.latlng.lng}"`)
-            console.log(`${e.latlng.lat},${e.latlng.lng}`)
+        layer.on({
+            click: (e) => {
+                console.log(`"latitud":"${e.latlng.lat}","longitud":"${e.latlng.lng}"`)
+                console.log(`${e.latlng.lat},${e.latlng.lng}`)
+            },
+            mouseover: (e) => {
+               console.log('mouseover') 
+            },
+            mouseout: (e) => {
+                console.log('mouseout')    
+            }
         })
+
 
         if (feature.properties) {
             layer.bindPopup(`Territorio N°: ${feature.properties.name}`);

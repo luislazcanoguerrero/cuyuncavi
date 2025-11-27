@@ -2595,7 +2595,7 @@
       "type": "Feature",
       "properties": {
         "id": 266,
-        "name": "16A",
+        "name": "16C",
         "position": {
           "latitud": "-33.398886",
           "longitud": "-71.13015"
@@ -2635,7 +2635,7 @@
       "type": "Feature",
       "properties": {
         "id": 1082,
-        "name": "16B",
+        "name": "16D",
         "position": {
           "latitud": "-33.398886",
           "longitud": "-71.12926999999999"
@@ -2675,7 +2675,7 @@
       "type": "Feature",
       "properties": {
         "id": 485,
-        "name": "16C",
+        "name": "16A",
         "position": {
           "latitud": "-33.4001605",
           "longitud": "-71.130217"
@@ -2715,7 +2715,7 @@
       "type": "Feature",
       "properties": {
         "id": 1139,
-        "name": "16D",
+        "name": "16B",
         "position": {
           "latitud": "-33.400185",
           "longitud": "-71.12930750000001"
