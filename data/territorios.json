@@ -5627,7 +5627,7 @@
       "type": "Feature",
       "properties": {
         "id": 604,
-        "name": "36A",
+        "name": "36C",
         "fillColor": "#c70518",
         "shape": "Polygon"
       },
@@ -5683,7 +5683,7 @@
       "type": "Feature",
       "properties": {
         "id": 625,
-        "name": "36B",
+        "name": "36A",
         "position": {
           "latitud": "-33.39413940032215",
           "longitud": "-71.1264645"
@@ -5727,7 +5727,7 @@
       "type": "Feature",
       "properties": {
         "id": 685,
-        "name": "36C",
+        "name": "36B",
         "position": {
           "latitud": "-33.39413940032215",
           "longitud": "-71.12539517223783"
