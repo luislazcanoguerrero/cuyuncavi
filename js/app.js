@@ -31,10 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
     OpenStreetMap.addTo(map);
 
 
-
     // MARCARDO INICIALMENTE UN CENTRO DEL MAPA
     map.setView([-33.4013205,-71.129367], 18)
-
 
     // AÑADIENDO UN RECUEDRO PARA LAS COORDENADAS
     L.control.coordinates({
@@ -45,13 +43,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }).addTo(map);
 
 
-    //CREANDO MARCADORES PARA LAS VILLAS
+    //CREANDO ICONO PARA LAS VILLAS
     var villasIcon = L.icon({
         iconUrl: '../images/svg/house-home-svgrepo-com.svg',
         iconSize: [40, 40], // size of the icon
         iconAnchor: [25, 50], // point of the icon which will correspond to marker's location
         popupAnchor: [0, -40] // point from which the popup should open relative to the iconAnchor
     });
+
+
+    // Agregando una marca al mapa
+    // const marca = L.marker([-33.40239157125629,-71.13067567348482])
+    // marca.bindPopup("Luis Lazcano",{className: 'label-villas'})
+    // marca.addTo(map)
 
     const aires = L.marker([-33.40863864443387, -71.1273229122162], { icon: villasIcon })
     const patriotas = L.marker([-33.39184441774129, -71.1224788427353], { icon: villasIcon })
@@ -68,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sol = L.marker([-33.39787279894641, -71.122784614563], { icon: villasIcon })
     const carol = L.marker([-33.39237292553458, -71.12376630306245], { icon: villasIcon })
 
-    aires.bindTooltip("Aires de Curacavi", { permanent: true, direction: 'right', className: 'label-villas' })
+    aires.bindTooltip("Aires de Curacavi", )
     patriotas.bindTooltip("Los Patriotas", { permanent: true, direction: 'right', className: 'label-villas' })
     cementerio.bindTooltip("Cementerio", { permanent: true, direction: 'right', className: 'label-villas' })
     racimos.bindTooltip("Los Racimos", { permanent: true, direction: 'right', className: 'label-villas' })
@@ -82,9 +86,13 @@ document.addEventListener('DOMContentLoaded', () => {
     alto.bindTooltip("Cuyuncaví Alto", { permanent: true, direction: 'right', className: 'label-villas' })
     sol.bindTooltip("Villa el Sol", { permanent: true, direction: 'right', className: 'label-villas' })
     carol.bindTooltip("Carol Urzúa", { permanent: true, direction: 'right', className: 'label-villas' })
+    
+    // Crear un agrupamiento de marcas usando layerGroup
     const villas = L.layerGroup([aires, patriotas, cementerio, racimos, padre, valle, williams, german, alberto, conquista, bajo, alto, sol, carol]);
 
-    //CREANDO MARCADORES PARA LAS VILLAS
+
+
+    // icono para los puntos de encuentros
     var puntosIcon = L.icon({
         iconUrl: '../images/ubicaciones.png',
         iconSize: [50, 50], // size of the icon
@@ -92,17 +100,16 @@ document.addEventListener('DOMContentLoaded', () => {
         popupAnchor: [0, -40] // point from which the popup should open relative to the iconAnchor
     });
 
-
     // CREANDO MARCADORES PARA LUGARES DE REUNIÓN
     const salon = L.marker([-33.40174220812829, -71.13112628459932], { icon: puntosIcon });
     const lazcano = L.marker([-33.398629676103276, -71.12742483615877], { icon: puntosIcon });
     const barrera = L.marker([-33.40544666167808, -71.14462852478029], { icon: puntosIcon });
     const ampuero = L.marker([-33.39134725917198, -71.12310111522676], { icon: puntosIcon });
+    const monasterio = L.marker([-33.40714923267345,-71.12753748893739], { icon: puntosIcon });
     const mirta = L.marker([-33.39304027400479, -71.12457633018495], { icon: puntosIcon });
 
     // AGRUPARLOS EN UN LAYERGROUP
-    const puntos = L.layerGroup([salon, lazcano, barrera, ampuero, mirta]);
-
+    const puntos = L.layerGroup([salon, lazcano, barrera, ampuero, monasterio,mirta]);
 
 
     // Insertando una imagen en el mapa en la esquina superior derecha
@@ -123,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             const capaLimites = L.geoJSON(data, {
                 style: function (feature) {
-                    const { codregion, fillColor } = feature.properties
+                    const { fillColor } = feature.properties
                     return {
                         opacity: 0.5,   // controla la opacidad del borde 
                         stroke: true,   // true = Con Borders remarcados
@@ -181,7 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
             },
         })
 
-
         if (feature.properties) {
             layer.bindPopup(`Territorio N°: ${feature.properties.name}`);
         }
@@ -201,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(e.latlng)
     })
 
-    // Oculta o Muestra capa dependiendo del nivel de zoom
+    // CAMBIA FONT SIZE DE LOS ROTULOS DEPENDIENDO DEL ZOOM
     map.on('zoomend', function (e) {
         const clase = document.getElementsByClassName('my-label')
         const zoomLevel = map.getZoom();
@@ -234,7 +240,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
     })
-
 
     map.on('locationfound', function (e) {
         var radius = e.accuracy;
