@@ -5,7 +5,7 @@
       "type": "Feature",
       "properties": {
         "id": 3056,
-        "name": "1",
+        "name": "1A",
         "position": {
           "latitud": "-33.40577146994817",
           "longitud": "-71.14432163439918"
@@ -113,7 +113,7 @@
       "type": "Feature",
       "properties": {
         "id": 1550,
-        "name": "2",
+        "name": "1B",
         "position": {
           "latitud": "-33.404602658294024",
           "longitud": "-71.13757332674801"

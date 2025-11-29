@@ -1,4 +1,4 @@
-const botones = [{ "name": "1", "latitud": "-33.40577146994817", "longitud": "-71.14432163439918" },
+export const botones = [{ "name": "1", "latitud": "-33.40577146994817", "longitud": "-71.14432163439918" },
 { "name": "2", "latitud": "-33.4026635605985", "longitud": "-71.13215652580948" },
 { "name": "3", "latitud": "-33.4085485", "longitud": "-71.1278915" },
 { "name": "4", "latitud": "-33.4076345", "longitud": "-71.1269985" },

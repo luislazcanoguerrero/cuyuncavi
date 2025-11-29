@@ -1,6 +1,7 @@
+import { botones } from "../data/botones.js";
+import { rotulos } from "../data/rotulos.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-
 
     //1. Crar el objeto mapa
     let map = L.map('map', { fullscreenControl: true, fullscreenControlOptions: { position: 'topleft' } });
@@ -83,10 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
     carol.bindTooltip("Carol Urzúa", { permanent: true, direction: 'right', className: 'label-villas' })
     const villas = L.layerGroup([aires, patriotas, cementerio, racimos, padre, valle, williams, german, alberto, conquista, bajo, alto, sol, carol]);
 
-
-    // CREANDO MARCADORES PARA LUGARES DE REUNIÓN
-
-
     //CREANDO MARCADORES PARA LAS VILLAS
     var puntosIcon = L.icon({
         iconUrl: '../images/ubicaciones.png',
@@ -95,6 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
         popupAnchor: [0, -40] // point from which the popup should open relative to the iconAnchor
     });
 
+
+    // CREANDO MARCADORES PARA LUGARES DE REUNIÓN
     const salon = L.marker([-33.40174220812829, -71.13112628459932], { icon: puntosIcon });
     const lazcano = L.marker([-33.398629676103276, -71.12742483615877], { icon: puntosIcon });
     const barrera = L.marker([-33.40544666167808, -71.14462852478029], { icon: puntosIcon });
@@ -143,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
         })
 
 
-
     // Botonera de acceso direct
     const botonera = document.querySelector("#botonera")
     botones.forEach(rotulo => {
@@ -159,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     // Capa de rotulos de los territorios
-    numeros = L.layerGroup();
+    const numeros = L.layerGroup();
     rotulos.forEach(rotulo => {
         const { name, latitud, longitud } = rotulo
         numeros.addLayer(L.tooltip({
@@ -181,12 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(`"latitud":"${e.latlng.lat}","longitud":"${e.latlng.lng}"`)
                 console.log(`${e.latlng.lat},${e.latlng.lng}`)
             },
-            mouseover: (e) => {
-               console.log('mouseover') 
-            },
-            mouseout: (e) => {
-                console.log('mouseout')    
-            }
         })
 
 
@@ -237,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     break;
             }
         }
-        for (i = 0; i < clase.length; i++) {
+        for (let i = 0; i < clase.length; i++) {
             clase[i].style.fontSize = zoomFontSize;
         }
 
