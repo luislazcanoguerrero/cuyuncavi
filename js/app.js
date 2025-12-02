@@ -101,15 +101,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // CREANDO MARCADORES PARA LUGARES DE REUNIÓN
-    const salon = L.marker([-33.40174220812829, -71.13112628459932], { icon: puntosIcon });
+    const salon = L.marker([-33.401945519487285,-71.13113433122636], { icon: puntosIcon });
     const lazcano = L.marker([-33.398629676103276, -71.12742483615877], { icon: puntosIcon });
     const barrera = L.marker([-33.40544666167808, -71.14462852478029], { icon: puntosIcon });
     const ampuero = L.marker([-33.39134725917198, -71.12310111522676], { icon: puntosIcon });
     const monasterio = L.marker([-33.40714923267345,-71.12753748893739], { icon: puntosIcon });
-    const mirta = L.marker([-33.39304027400479, -71.12457633018495], { icon: puntosIcon });
+    const mirta = L.marker([-33.39374792651667,-71.12491965293886], { icon: puntosIcon });
+    const carvajal = L.marker([-33.39292336942326,-71.12353831529619], { icon: puntosIcon });
+    const dina     = L.marker([-33.3956352632954,-71.1313033103943], { icon: puntosIcon });
+    const gladys   = L.marker([-33.391761103289184,-71.12308502197267], { icon: puntosIcon });
+
+
+    salon.bindTooltip("Salón del Reino. <br> <small> Willian Rebolledo N°1803 </small>", { permanent: false, direction: 'right', className: 'label-villas' })
+    lazcano.bindTooltip("Familia Lazcano <br> <small> Manuel Larraín N°435 </small>", { permanent: false, direction: 'right', className: 'label-villas' })
+    barrera.bindTooltip("", { permanent: false, direction: 'right', className: 'label-villas' })
+    ampuero.bindTooltip("Familia Ampuero. <br> <small> Av. Los Patriotas N°2154, Villa el Carol Urzua </small> ", { permanent: false, direction: 'right', className: 'label-villas' })
+    mirta.bindTooltip("Hna. Mirta Ormazabal. <br> <small> Villa el Olivar Pasaje Camilo Henríquez N°1040</small>", { permanent: false, direction: 'right', className: 'label-villas' })
+    dina.bindTooltip("Hna. Eduvina Garcia", { permanent: false, direction: 'right', className: 'label-villas' })
+    gladys.bindTooltip("Hna. Gladys Palomino", { permanent: false, direction: 'right', className: 'label-villas' })
+    monasterio.bindTooltip("Familia Monaterio Ventura <br> <small> Pasaje El Coigüe N°1822</small>", { permanent: false, direction: 'right', className: 'label-villas' })
+    carvajal.bindTooltip("Familia Carvajal <br> <small> Manuel de Salas N° 2132, Villa el Carol Urzua</small>", { permanent: false, direction: 'right', className: 'label-villas' })
+
 
     // AGRUPARLOS EN UN LAYERGROUP
-    const puntos = L.layerGroup([salon, lazcano, barrera, ampuero, monasterio,mirta]);
+    const puntos = L.layerGroup([salon, lazcano, barrera, ampuero, monasterio,mirta,dina,carvajal,gladys]);
 
 
     // Insertando una imagen en el mapa en la esquina superior derecha
