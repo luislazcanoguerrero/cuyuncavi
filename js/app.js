@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // MARCARDO INICIALMENTE UN CENTRO DEL MAPA
-    map.setView([-33.4013205,-71.129367], 18)
+    map.setView([-33.4013205, -71.129367], 18)
 
     // AÑADIENDO UN RECUEDRO PARA LAS COORDENADAS
     L.control.coordinates({
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sol = L.marker([-33.39787279894641, -71.122784614563], { icon: villasIcon })
     const carol = L.marker([-33.39237292553458, -71.12376630306245], { icon: villasIcon })
 
-    aires.bindTooltip("Aires de Curacavi", )
+    aires.bindTooltip("Aires de Curacavi",)
     patriotas.bindTooltip("Los Patriotas", { permanent: true, direction: 'right', className: 'label-villas' })
     cementerio.bindTooltip("Cementerio", { permanent: true, direction: 'right', className: 'label-villas' })
     racimos.bindTooltip("Los Racimos", { permanent: true, direction: 'right', className: 'label-villas' })
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     alto.bindTooltip("Cuyuncaví Alto", { permanent: true, direction: 'right', className: 'label-villas' })
     sol.bindTooltip("Villa el Sol", { permanent: true, direction: 'right', className: 'label-villas' })
     carol.bindTooltip("Carol Urzúa", { permanent: true, direction: 'right', className: 'label-villas' })
-    
+
     // Crear un agrupamiento de marcas usando layerGroup
     const villas = L.layerGroup([aires, patriotas, cementerio, racimos, padre, valle, williams, german, alberto, conquista, bajo, alto, sol, carol]);
 
@@ -101,15 +101,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // CREANDO MARCADORES PARA LUGARES DE REUNIÓN
-    const salon = L.marker([-33.401945519487285,-71.13113433122636], { icon: puntosIcon });
+    const salon = L.marker([-33.401945519487285, -71.13113433122636], { icon: puntosIcon });
     const lazcano = L.marker([-33.398629676103276, -71.12742483615877], { icon: puntosIcon });
     const barrera = L.marker([-33.40544666167808, -71.14462852478029], { icon: puntosIcon });
     const ampuero = L.marker([-33.39134725917198, -71.12310111522676], { icon: puntosIcon });
-    const monasterio = L.marker([-33.40714923267345,-71.12753748893739], { icon: puntosIcon });
-    const mirta = L.marker([-33.39374792651667,-71.12491965293886], { icon: puntosIcon });
-    const carvajal = L.marker([-33.39292336942326,-71.12353831529619], { icon: puntosIcon });
-    const dina     = L.marker([-33.3956352632954,-71.1313033103943], { icon: puntosIcon });
-    const gladys   = L.marker([-33.391761103289184,-71.12308502197267], { icon: puntosIcon });
+    const monasterio = L.marker([-33.40714923267345, -71.12753748893739], { icon: puntosIcon });
+    const mirta = L.marker([-33.39374792651667, -71.12491965293886], { icon: puntosIcon });
+    const carvajal = L.marker([-33.39292336942326, -71.12353831529619], { icon: puntosIcon });
+    const dina = L.marker([-33.3956352632954, -71.1313033103943], { icon: puntosIcon });
+    const gladys = L.marker([-33.391761103289184, -71.12308502197267], { icon: puntosIcon });
 
 
     salon.bindTooltip("Salón del Reino. <br> <small> Willian Rebolledo N°1803 </small>", { permanent: false, direction: 'right', className: 'label-villas' })
@@ -124,19 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // AGRUPARLOS EN UN LAYERGROUP
-    const puntos = L.layerGroup([salon, lazcano, barrera, ampuero, monasterio,mirta,dina,carvajal,gladys]);
-
-
-    // Insertando una imagen en el mapa en la esquina superior derecha
-    var legend = L.control({
-        position: 'topright'
-    });
-    legend.onAdd = function () {
-        var div = L.DomUtil.create('div', 'legend');
-        div.innerHTML += '<img alt="Descripcion de la imagen" src="/images/predi.png" width="80px" title="Estas buenas nuevas del Reino se predicarán en toda la tierra habitad">';
-        return div;
-    };
-    legend.addTo(map);
+    const puntos = L.layerGroup([salon, lazcano, barrera, ampuero, monasterio, mirta, dina, carvajal, gladys]);
 
     //add geojson layer
     const geoJsonUrl = 'data/territorios.json'
@@ -189,6 +177,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }).setContent(name).setLatLng([latitud, longitud]))
     })
     numeros.addTo(map)
+
+
+  // Insertando una imagen en el mapa en la esquina superior derecha
+    var legend = L.control({
+        position: 'topright'
+    });
+    legend.onAdd = function () {
+        var div = L.DomUtil.create('div', 'legend');
+        div.innerHTML += '<img alt="Descripcion de la imagen" src="/images/predi.png" width="80px" title="Estas buenas nuevas del Reino se predicarán en toda la tierra habitad">';
+        return div;
+    };
+    legend.addTo(map);
 
 
     function muestraFeatureDatos(feature, layer) {
@@ -264,5 +264,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
+    var printer = L.easyPrint({
+        tileLayer: OpenStreetMap,
+        sizeModes: ['Current', 'A4Landscape', 'A4Portrait'],
+        filename: 'cuyuncavi',
+        exportOnly: true,
+        hideControlContainer: true
+    }).addTo(map);
+
+    function manualPrint() {
+        printer.printMap('CurrentSize', 'MyManualPrint')
+    }
 })
 
